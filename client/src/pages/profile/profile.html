@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-title>
+      Account
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goToSettingsPage()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <a ion-item (click)="goToContactUsPage()">
+      Contact Us
+    </a> 
+    <a ion-item (click)="goToAboutUsPage()">
+      About Us
+    </a>
+  </ion-list>
+
+</ion-content>
