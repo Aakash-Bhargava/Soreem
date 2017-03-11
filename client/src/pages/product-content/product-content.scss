@@ -1,0 +1,19 @@
+page-product-content {
+	.product h1{
+		font-weight: bold;
+		text-align: center;
+	}
+	.product h2{
+		text-align: center;
+	}
+
+	.body, .product, .size{
+		color: white;
+		background-color: black;
+	}
+
+	.size{
+		max-width: 100%;
+	}
+
+}

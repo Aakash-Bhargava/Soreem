@@ -7,7 +7,7 @@
     	</button>
     </ion-buttons>
 
-    <ion-title>Collections</ion-title>
+    <ion-title>Products</ion-title>
 
     <ion-buttons end>
       <button ion-button icon-only>
@@ -31,13 +31,13 @@
 			  <ion-slide class="slide" style="background-image: url(/assets/Images/Soreem2.jpg);">
 			    <h1>2</h1>
 		  	</ion-slide>
-        
+
 			</ion-slides>	
 		</ion-row>
 
 		<ion-row>
   		<ion-col width-50>
-  			<ion-card>
+  			<ion-card (click)='openModal({charNum: 0})'>
 	    		<img src="/assets/Images/SoreemSticker.jpeg"/>
 	    		<div class="card-title">Soreem Sticker</div>
 	    		<div class="card-subtitle">$2</div>
@@ -45,7 +45,7 @@
   		</ion-col>
 
   		<ion-col width-50>
-    			<ion-card>
+    			<ion-card (click)='openModal({charNum: 1})'>
 				    <img src="/assets/Images/ImatterTee.jpg"/>
 				    <div class="card-title">IMatter Tee</div>
 				    <div class="card-subtitle">$20</div>
@@ -55,16 +55,16 @@
 
   		<ion-row>
     		<ion-col width-50>
-    			<ion-card>
+    			<ion-card (click)='openModal({charNum: 2})'>
 		    		<img src="/assets/Images/BlackUnityVest.jpg"/>
 		    		<div class="card-title">Black Unity Vest</div>
 		    		<div class="card-subtitle">$90</div>
 				</ion-card>
     		</ion-col>
     		<ion-col width-50>
-    			<ion-card>
+    			<ion-card (click)='openModal({charNum: 3})'>
 				    <img src="/assets/Images/SoreemJoggers.jpg"/>
-				    <div class="card-title">IMatter Tee</div>
+				    <div class="card-title">Soreem Joggers</div>
 				    <div class="card-subtitle">$35</div>
 				</ion-card>
     		</ion-col>
@@ -72,14 +72,14 @@
 
   		<ion-row>
     		<ion-col width-50>
-    			<ion-card>
+    			<ion-card (click)='openModal({charNum: 4})'>
 		    		<img src="/assets/Images/DestroyedFlagCrewneck.jpg"/>
 		    		<div class="card-title">Destroyed Flag Crewneck</div>
 		    		<div class="card-subtitle">$45</div>
 				</ion-card>
     		</ion-col>
     		<ion-col width-50>
-    			<ion-card>
+    			<ion-card (click)='openModal({charNum: 5})'>
 				    <img src="/assets/Images/FlagBeanie.jpg"/>
 				    <div class="card-title">Flag Beanie</div>
 				    <div class="card-subtitle">$15</div>

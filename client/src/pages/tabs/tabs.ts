@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { HomePage } from '../home/home';
+import { ProductsPage } from '../products/products';
 import { ProfilePage } from '../profile/profile';
 import { SettingsPage } from '../settings/settings';
 import { WishListPage } from '../wishlist/wishlist';
-import { SocialPage } from '../social/social';
+import { LookBookPage } from '../lookbook/lookbook';
 import { ShoppingBagPage } from '../shopbag/shopbag';
 
 @Component({
@@ -12,8 +12,8 @@ import { ShoppingBagPage } from '../shopbag/shopbag';
 export class TabsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  Home: any = HomePage;
-  Social: any = SocialPage;
+  Products: any = ProductsPage;
+  Lookbook: any = LookBookPage;
   WishList: any = WishListPage;
   Profile: any = ProfilePage;
   ShoppingBag: any = ShoppingBagPage;

@@ -9,9 +9,9 @@ import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'landing.html'
+  templateUrl: 'login.html'
 })
-export class LandingPage{
+export class LoginPage{
   email = "";
   password = "";
   LoginInfo = <any>{};

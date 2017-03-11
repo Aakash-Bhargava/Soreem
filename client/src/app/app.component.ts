@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { TabsPage } from '../pages/tabs/tabs';
-import { LandingPage} from '../pages/landing/landing';
+import { LoginPage } from '../pages/login/login';
 import { NavController } from 'ionic-angular';
 
 
@@ -12,7 +12,7 @@ import { NavController } from 'ionic-angular';
 
 
 export class MyApp {
-  rootPage = LandingPage;
+  rootPage = LoginPage;
 
   constructor(platform: Platform, ) {
     platform.ready().then(() => {

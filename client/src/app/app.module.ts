@@ -3,9 +3,10 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ProfilePage } from '../pages/profile/profile';
-import { HomePage } from '../pages/home/home';
+import { ProductsPage } from '../pages/products/products';
+import { ProductContentPage } from '../pages/product-content/product-content';
 import { TabsPage } from '../pages/tabs/tabs';
-import { LandingPage }  from '../pages/landing/landing';
+import { LoginPage }  from '../pages/login/login';
 import { SettingsPage } from '../pages/settings/settings';
 import { WishListPage } from '../pages/wishlist/wishlist';
 import { EventsPage } from '../pages/events/events';
@@ -25,9 +26,10 @@ import { provideClient } from './client';
     MyApp,
     AboutPage,
     ProfilePage,
-    HomePage,
+    ProductsPage,
+    ProductContentPage,
     TabsPage,
-    LandingPage,
+    LoginPage,
     SettingsPage,
     WishListPage,
     EventsPage,
@@ -49,9 +51,10 @@ import { provideClient } from './client';
     MyApp,
     AboutPage,
     ProfilePage,
-    HomePage,
+    ProductsPage,
+    ProductContentPage,
     TabsPage,
-    LandingPage,
+    LoginPage,
     SettingsPage,
     WishListPage,
     EventsPage,
