@@ -3,7 +3,6 @@ import { NavController, ToastController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { SignupPage } from '../signup/signup';
 import { Angular2Apollo } from 'angular2-apollo';
-import { Subscription } from 'rxjs/Subscription';
 import gql from 'graphql-tag';
 import 'rxjs/add/operator/toPromise';
 
@@ -15,7 +14,7 @@ export class LoginPage{
   email = "";
   password = "";
   LoginInfo = <any>{};
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController, 
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController,
   			   private apollo: Angular2Apollo) {
     }
   //calls the signIn function
@@ -33,7 +32,7 @@ export class LoginPage{
       this.navCtrl.push(TabsPage);
     });
   }
-  
+
   //returns a promise that contains the user's auth token
   signIn(){
     return this.apollo.mutate({
