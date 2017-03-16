@@ -25,4 +25,4 @@ const client = new ApolloClient({ networkInterface });
 
 export function provideClient(): ApolloClient {
   return client;
-} 
+}

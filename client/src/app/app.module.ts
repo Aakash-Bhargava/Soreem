@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
+import { FaqPage } from '../pages/faq/faq';
 import { ProfilePage } from '../pages/profile/profile';
 import { ProductsPage } from '../pages/products/products';
 import { ProductContentPage } from '../pages/product-content/product-content';
@@ -25,6 +26,7 @@ import { provideClient } from './client';
   declarations: [
     MyApp,
     AboutPage,
+    FaqPage,
     ProfilePage,
     ProductsPage,
     ProductContentPage,
@@ -50,6 +52,7 @@ import { provideClient } from './client';
   entryComponents: [
     MyApp,
     AboutPage,
+    FaqPage,
     ProfilePage,
     ProductsPage,
     ProductContentPage,

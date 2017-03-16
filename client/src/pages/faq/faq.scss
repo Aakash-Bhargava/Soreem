@@ -1,0 +1,21 @@
+page-faq {
+  .header{
+    text-align: center;
+    font-style: normal;
+    font-weight: bolder;
+    text-decoration: underline;
+  }
+
+  .question{
+    text-align: left;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  .answer{
+    text-align: left;
+    font-style: normal;
+    font-weight: normal;
+    padding-top: .5cm;
+  }
+}

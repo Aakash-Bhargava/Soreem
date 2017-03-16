@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { SettingsPage } from '../settings/settings';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
+import { FaqPage } from '../faq/faq';
+
 
 
 @Component({
@@ -25,6 +27,10 @@ export class ProfilePage {
 
   goToAboutUsPage(){
   	this.navCtrl.push(AboutPage);
+  }
+
+  goToFaqPage(){
+  	this.navCtrl.push(FaqPage);
   }
 
 }
