@@ -11,7 +11,7 @@ import { ProductContentPage } from '../product-content/product-content';
 })
 export class ProductsPage {
   constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
-  }
+    }
 
   goToProfilePage() {
     //push another page onto the history stack
@@ -27,5 +27,7 @@ export class ProductsPage {
     let modal = this.modalCtrl.create(ProductContentPage, characterNum);
     modal.present();
   }
+
+  rootPage = "ProductsPage";
 
 }
