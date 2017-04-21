@@ -19,19 +19,22 @@
 </ion-header>
 
 <ion-content>
-
+  
   <ion-list>
-    <a ion-item (click)="goToContactUsPage()">
+    <ion-item>
+      <ion-label color="primary" stacked>Email</ion-label>
+      <ion-input type="email" value={{email}}></ion-input>
+    </ion-item>
+
+    <ion-item (click)="goToContactUsPage()">
       Contact Us
-    </a>
-    <a ion-item (click)="goToAboutUsPage()">
+    </ion-item>
+    <ion-item (click)="goToAboutUsPage()">
       About Us
-    </a>
-    <a ion-item (click)="goToFaqPage()">
+    </ion-item>
+    <ion-item (click)="goToFaqPage()">
       FAQ
-    </a>
-
-
+    </ion-item>
   </ion-list>
 
 </ion-content>

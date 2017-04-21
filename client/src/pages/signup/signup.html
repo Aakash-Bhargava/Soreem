@@ -22,12 +22,17 @@
 
       <ion-item>
         <ion-label floating>Password</ion-label>
-        <ion-textarea formControlName="password" [(ngModel)]="password"></ion-textarea>
+        <ion-input type="password" formControlName="password" [(ngModel)]="password"></ion-input>
       </ion-item>
 
-      <button ion-button full type="submit" (click)='signUpEvent()' 
+      <ion-item>
+        <ion-label floating>Birthday</ion-label>
+        <ion-input type="password" formControlName="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <button ion-button  color="dark" full type="submit" (click)='signUpEvent()'
   		[disabled]="!signupForm.valid">Sign Up & Login</button>
 
     </form>
- 
+
 </ion-content>

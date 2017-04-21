@@ -24,19 +24,17 @@
         <h1>{{product.name}}</h1>
         <h2>{{product.price}}</h2>
       </ion-item>
-      <ion-item class="size">
-		  <ion-label>Size</ion-label>
-		  <ion-select [(ngModel)]="sizes" okText="Okay" cancelText="Dismiss">
-		    <ion-option>XS</ion-option>
-		    <ion-option>S</ion-option>
-		    <ion-option>M</ion-option>
-		    <ion-option>L</ion-option>
-		    <ion-option>XL</ion-option>
-		    <ion-option>XXL</ion-option>
-		  </ion-select>
-		</ion-item>
+       <ion-item>
+         <ion-label>Size</ion-label>
+         <ion-select [(ngModel)]="size">
+           <ion-option value="small">Small</ion-option>
+           <ion-option value="medium">Medium</ion-option>
+           <ion-option value="large">Large</ion-option>
+           <ion-option value="xlarge">X-Large</ion-option>
+         </ion-select>
+       </ion-item>
   </ion-list>
-  <button ion-button full outline round icon-right color="light">
+  <button ion-button full outline round icon-right color="dark">
     <ion-icon name="cart"></ion-icon>
     Add to Cart
   </button>

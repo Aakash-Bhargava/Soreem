@@ -25,6 +25,10 @@ page-product {
 	.slide{
 		background-size: 100%, 100%;
 		background-repeat: no-repeat;
+		padding: 0px;
+	}
+
+	div.slide-zoom{
+		bottom: 0;
 	}
 }
-

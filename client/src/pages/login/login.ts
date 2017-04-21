@@ -30,7 +30,21 @@ export class LoginPage{
       }
     }).then(() =>{
       this.navCtrl.push(TabsPage);
+    }).catch(() => {
+      console.log('view was not dismissed');
+      this.showToast();
     });
+  }
+
+
+  showToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Login failed, Please try again.',
+      duration: 2500,
+      position: 'bottom'
+    });
+
+    toast.present(toast);
   }
 
   //returns a promise that contains the user's auth token

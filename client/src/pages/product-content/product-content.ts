@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavParams, Platform, ViewController } from 'ionic-angular';
+import { NavParams, Platform, ViewController, AlertController } from 'ionic-angular';
 import { ProductsPage } from '../products/products';
 
 
@@ -20,7 +20,8 @@ export class ProductContentPage {
   constructor(
     public platform: Platform,
     public params: NavParams,
-    public viewCtrl: ViewController
+    public viewCtrl: ViewController,
+    public alertCtrl: AlertController
   ) {
     var products = [
       {
@@ -56,6 +57,51 @@ export class ProductContentPage {
     ];
     this.product = products[this.params.get('charNum')];
   }
+
+
+
+  //Alert created when Size is chosen.
+  doRadio() {
+    let alert = this.alertCtrl.create({
+    title: 'Size',
+    inputs: [
+      {
+        type: 'radio',
+        label: 'S',
+        value: 'small'
+      },
+      {
+        type: 'radio',
+        label: 'M',
+        value: 'medium'
+      },
+      {
+        type: 'radio',
+        label: 'L',
+        value: 'large'
+      },
+      {
+        type: 'radio',
+        label: 'X',
+        value: 'xlarge'
+      }
+    ],
+    buttons : [
+      {
+        text: 'Cancel'
+      },
+      {
+        text: 'Ok',
+        handler: (data: any) => {
+          console.log('Radio data:', data);
+        }
+      }
+    ]
+  });
+
+  alert.present();
+  }
+
 
   dismiss() {
     this.viewCtrl.dismiss();
