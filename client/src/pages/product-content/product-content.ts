@@ -27,32 +27,38 @@ export class ProductContentPage {
       {
         name: 'Soreem Sticker',
         price: '2$',
-        image: 'assets/Images/SoreemSticker.jpeg'
+        image: 'assets/Images/SoreemSticker.jpeg',
+        collection: 'accessories'
       },
       {
         name: 'IMatter Tee',
         price: '20$',
-        image: 'assets/Images/ImatterTee.jpg'
+        image: 'assets/Images/ImatterTee.jpg',
+        collection: 'STAGE 1'
       },
       {
         name: 'Black Unity Vest',
         price: '90$',
-        image: 'assets/Images/BlackUnityVest.jpg'
+        image: 'assets/Images/BlackUnityVest.jpg',
+        collection: 'none'
       },
       {
         name: 'Soreem Joggers',
         price: '35$',
-        image: 'assets/Images/SoreemJoggers.jpg'
+        image: 'assets/Images/SoreemJoggers.jpg',
+        collection: 'Mes Racines'
       },
       {
         name: 'Destroyed Flag Crewneck',
         price: '45$',
-        image: 'assets/Images/DestroyedFlagCrewneck.jpg'
+        image: 'assets/Images/DestroyedFlagCrewneck.jpg',
+        collection: 'Mes Racines'
       },
       {
         name: 'Flag Beanie',
         price: '15$',
-        image: 'assets/Images/FlagBeanie.jpg'
+        image: 'assets/Images/FlagBeanie.jpg',
+        collection: 'none'
       }
     ];
     this.product = products[this.params.get('charNum')];

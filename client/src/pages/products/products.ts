@@ -3,6 +3,8 @@ import { App, MenuController, NavController, ModalController } from 'ionic-angul
 import { TabsPage } from '../tabs/tabs';
 import { ProfilePage } from '../profile/profile';
 import { ProductContentPage } from '../product-content/product-content';
+import { Slides } from 'ionic-angular';
+import { ViewChild } from '@angular/core';
 
 
 @Component({
@@ -10,7 +12,41 @@ import { ProductContentPage } from '../product-content/product-content';
   templateUrl: 'products.html'
 })
 export class ProductsPage {
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+  //sets the product segment toggled 'all' as default
+  products: string = "all";
+  collections = <any>[];
+  items = <any>[];
+
+  constructor(public navCtrl: NavController,
+    public modalCtrl: ModalController) {
+
+       this.collections = [
+        {
+          name: 'Mes Racines',
+          image: 'assets/Images/DestroyedFlagCrewneck.jpg'
+        },
+        {
+          name: 'STAGE 1',
+          image: 'assets/Images/ImatterTee.jpg'
+        },
+        {
+          name: 'Acessories',
+          image: 'assets/Images/SoreemSticker.jpeg'
+        },
+        {
+          name: 'Birthday Collection',
+          image: 'assets/Images/slide0.jpg'
+        }
+      ];
+
+
+      this.items = [
+        {
+          name: 'Soreem Sticker',
+          image: 'assets/Images/SoreemSticker.jpeg',
+          price: '$2'
+        }
+      ]
     }
 
   goToProfilePage() {
