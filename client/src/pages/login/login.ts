@@ -7,7 +7,7 @@ import gql from 'graphql-tag';
 import 'rxjs/add/operator/toPromise';
 
 @Component({
-  selector: 'page-home',
+  selector: 'page-login',
   templateUrl: 'login.html'
 })
 export class LoginPage{

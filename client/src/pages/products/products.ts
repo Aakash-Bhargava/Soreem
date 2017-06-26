@@ -5,6 +5,12 @@ import { ProfilePage } from '../profile/profile';
 import { ProductContentPage } from '../product-content/product-content';
 import { Slides } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
+import { Angular2Apollo } from 'angular2-apollo';
+import { Subscription } from 'rxjs/Subscription';
+import gql from 'graphql-tag';
+import 'rxjs/add/operator/toPromise';
+
+import {DomSanitizer} from '@angular/platform-browser';
 
 
 @Component({
@@ -13,40 +19,85 @@ import { ViewChild } from '@angular/core';
 })
 export class ProductsPage {
   //sets the product segment toggled 'all' as default
-  products: string = "all";
+  productView: string = "all";
+  allProducts = <any>[];
+  allAvailable = <any>[];
   collections = <any>[];
   items = <any>[];
 
   constructor(public navCtrl: NavController,
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController,
+    private apollo: Angular2Apollo,
+    public _DomSanitizer: DomSanitizer) {
+      this.loadProducts();
+      this.loadCollections();
+    }
 
-       this.collections = [
-        {
-          name: 'Mes Racines',
-          image: 'assets/Images/DestroyedFlagCrewneck.jpg'
-        },
-        {
-          name: 'STAGE 1',
-          image: 'assets/Images/ImatterTee.jpg'
-        },
-        {
-          name: 'Acessories',
-          image: 'assets/Images/SoreemSticker.jpeg'
-        },
-        {
-          name: 'Birthday Collection',
-          image: 'assets/Images/slide0.jpg'
+    ionViewDidEnter(){
+
+    }
+
+    loadCollections() {
+      this.queryCollections().then(({data}) => {
+        if (data){
+          this.collections = data
+          this.collections = this.collections.allCollections;
+          console.log(this.collections);
         }
-      ];
+      });
+    }
 
+    //returns a promise that both creates the user and returns the user's auth token
+    queryCollections(){
+      return this.apollo.mutate({
+        mutation: gql`
+          query{
+            allCollections{
+              name
+              image
+              products {
+                id
+                name
+                price
+                images
+                sizeable
+              }
+            }
+          }
+        `
+      }).toPromise();
+    }
 
-      this.items = [
-        {
-          name: 'Soreem Sticker',
-          image: 'assets/Images/SoreemSticker.jpeg',
-          price: '$2'
+    loadProducts(){
+      this.queryProducts().then(({data}) => {
+        if (data){
+          this.allProducts = data;
+          this.allProducts = this.allProducts.allProducts;
+          for(let product of this.allProducts){
+            if(product.available){
+              this.allAvailable.push(product);
+            }
+          }
         }
-      ]
+      });
+
+    }
+
+    queryProducts(){
+      return this.apollo.mutate({
+        mutation: gql`
+        query{
+          allProducts{
+            id
+            name
+            price
+            sizeable
+            images
+            available
+          }
+        }
+        `
+      }).toPromise();
     }
 
   goToProfilePage() {

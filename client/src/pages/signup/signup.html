@@ -22,15 +22,15 @@
 
       <ion-item>
         <ion-label floating>Password</ion-label>
-        <ion-input type="password" formControlName="password" [(ngModel)]="password"></ion-input>
+        <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Birthday</ion-label>
-        <ion-input type="password" formControlName="password" [(ngModel)]="password"></ion-input>
+        <ion-datetime displayFormat="MM/DD/YYYY" formControlName="birthday"></ion-datetime>
       </ion-item>
 
-      <button ion-button  color="dark" full type="submit" (click)='signUpEvent()'
+      <button ion-button block color="dark" full type="submit" (click)='signUpEvent()'
   		[disabled]="!signupForm.valid">Sign Up & Login</button>
 
     </form>

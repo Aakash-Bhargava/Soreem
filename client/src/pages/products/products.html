@@ -38,7 +38,7 @@
 
 <!-- Segment (All/Collections)-->
     <div padding>
-      <ion-segment [(ngModel)]="products">
+      <ion-segment [(ngModel)]="productView">
         <ion-segment-button value="all">
           All
         </ion-segment-button>
@@ -49,7 +49,38 @@
     </div>
 
 <!-- Switch Cases -->
-    <div [ngSwitch]="products">
+    <div [ngSwitch]="productView">
+      <ion-list *ngSwitchCase="'all'">
+        <ion-grid>
+          <ion-row wrap>
+        		<ion-col width-50 *ngFor="let p of allAvailable">
+        			<ion-card>
+      	    		<img class="card-image" src="{{p.images[0]}}"/>
+      	    		<div class="card-title">{{p.name}}</div>
+      	    		<div class="card-subtitle">${{p.price}}</div>
+      		    </ion-card>
+        		</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+    </div>
+
+    <div [ngSwitch]="productView">
+      <ion-list *ngSwitchCase="'collections'">
+        <ion-card class="collectionCard" *ngFor="let c of collections">
+          <img class="collectionImage" src="{{c.image}}"/>
+          <ion-card-content>
+            <p>
+              {{c.name}}
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </div>
+
+
+
+    <!-- <div [ngSwitch]="products">
       <ion-list *ngSwitchCase="'all'">
         <ion-row>
       		<ion-col width-50>
@@ -108,11 +139,11 @@
     <div [ngSwitch]="products">
       <ion-list *ngSwitchCase="'collections'">
         <ion-card *ngFor="let c of collections">
-            <div class="card-title">{{ c.name }}</div>
+            <div class="collection-title">{{ c.name }}</div>
             <img src= "{{c.image}}"/>
         </ion-card>
       </ion-list>
-    </div>
+    </div> -->
 
 	</ion-grid>
 </ion-content>

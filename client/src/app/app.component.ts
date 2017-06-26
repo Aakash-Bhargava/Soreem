@@ -17,7 +17,7 @@ import { FaqPage } from '../pages/faq/faq';
 
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage = LoginPage;
+  rootPage : any;
 
   pages: Array<{title: string, component: any}>;
 
@@ -27,6 +27,12 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
+
+      if (window.localStorage.getItem('graphcoolToken') != null) {
+        this.rootPage = TabsPage;
+      } else {
+      this.rootPage = LoginPage;
+    }
 
 
       this.pages = [
