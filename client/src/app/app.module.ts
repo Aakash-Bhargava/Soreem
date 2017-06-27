@@ -14,7 +14,7 @@ import { EventsPage } from '../pages/events/events';
 import { NewReleasePage } from '../pages/new_release/newrelease';
 import { SocialPage } from '../pages/social/social';
 import { LookBookPage } from '../pages/lookbook/lookbook';
-import { ShoppingBagPage } from '../pages/shopbag/shopbag';
+import { CartPage } from '../pages/cart/cart';
 import { CollectionsPage } from '../pages/collections/collections';
 import { SalePage } from '../pages/sale/sale';
 import { ContactPage } from '../pages/contact/contact';
@@ -38,7 +38,7 @@ import { provideClient } from './client';
     NewReleasePage,
     SocialPage,
     LookBookPage,
-    ShoppingBagPage,
+    CartPage,
     CollectionsPage,
     SalePage,
     ContactPage,
@@ -64,7 +64,7 @@ import { provideClient } from './client';
     NewReleasePage,
     SocialPage,
     LookBookPage,
-    ShoppingBagPage,
+    CartPage,
     CollectionsPage,
     SalePage,
     ContactPage,

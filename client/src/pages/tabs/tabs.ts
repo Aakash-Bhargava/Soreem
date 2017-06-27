@@ -4,7 +4,7 @@ import { ContactPage } from '../contact/contact';
 import { SettingsPage } from '../settings/settings';
 import { AboutPage } from '../about/about';
 import { LookBookPage } from '../lookbook/lookbook';
-import { ShoppingBagPage } from '../shopbag/shopbag';
+import { CartPage } from '../cart/cart';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -16,6 +16,6 @@ export class TabsPage {
   About: any = AboutPage;
   Lookbook: any = LookBookPage;
   Contact: any = ContactPage;
-  ShoppingBag: any = ShoppingBagPage;
+  ShoppingBag: any = CartPage;
   constructor() {}
 }

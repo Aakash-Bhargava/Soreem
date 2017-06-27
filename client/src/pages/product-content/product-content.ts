@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavParams, Platform, ViewController, AlertController } from 'ionic-angular';
+import { NavParams, Platform, ViewController, AlertController, ToastController } from 'ionic-angular';
 import { ProductsPage } from '../products/products';
 
 
@@ -15,30 +15,28 @@ import { ProductsPage } from '../products/products';
 })
 export class ProductContentPage {
 
-  product;
-  collection;
+  product: any;
+  collection: any;
+  currentCart = <any>[];
+  newCart = <any>[];
 
   constructor(
     public platform: Platform,
     public params: NavParams,
     public viewCtrl: ViewController,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController,
+    public toastCtrl: ToastController
   ) {
-      if(this.params.get('collection')){
-        this.collection = this.params.get('collection');
-        console.log(this.product);
-      }
+      this.currentCart = window.localStorage.getItem('cart');
+      this.currentCart = JSON.parse(this.currentCart);
+      console.log(this.currentCart);
 
       if(this.params.get('product'))
       {
         this.product = this.params.get('product');
         console.log(this.product);
       }
-
-
-
   }
-
 
 
   //Alert created when Size is chosen.
@@ -86,6 +84,43 @@ export class ProductContentPage {
 
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+
+  addToCart() {
+    if (!this.currentCart) {
+      this.newCart.push(this.product);
+      window.localStorage.setItem('cart', JSON.stringify(this.newCart));
+      let toast = this.toastCtrl.create({
+        message: 'Item Added',
+        duration: 3000,
+        position: 'top'
+      });
+      toast.present();
+      this.viewCtrl.dismiss();
+      return;
+    } else {
+      for (let item of this.currentCart) {
+        if (item.id == this.product.id) {
+          let toast = this.toastCtrl.create({
+            message: 'You already have this item in your cart!',
+            duration: 3000,
+            position: 'top'
+          });
+          toast.present();
+          return;
+        }
+      }
+    }
+    this.currentCart.push(this.product);
+    window.localStorage.setItem('cart', JSON.stringify(this.currentCart));
+    let toast = this.toastCtrl.create({
+      message: 'Item Added',
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
+    this.viewCtrl.dismiss();
+
   }
 
 }

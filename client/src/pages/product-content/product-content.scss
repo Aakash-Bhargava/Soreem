@@ -1,15 +1,19 @@
 page-product-content {
 	.product h1{
-		font-weight: bold;
 		text-align: center;
 	}
-
-	.body, .product, .size{
-		color: black;
+	.product h1 span {
+		font-weight: bold;
 	}
 
-	.size{
-		max-width: 100%;
+	ion-content{
+		color: black;
+	}
+	ion-content h1 {
+		margin-top: 2%;
+	}
+	.cart {
+		text-align: center;
 	}
 
 }
