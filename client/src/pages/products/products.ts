@@ -3,6 +3,7 @@ import { App, MenuController, NavController, ModalController } from 'ionic-angul
 import { TabsPage } from '../tabs/tabs';
 import { ProfilePage } from '../profile/profile';
 import { ProductContentPage } from '../product-content/product-content';
+import { CollectionsPage } from '../collections/collections';
 import { Slides } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Angular2Apollo } from 'angular2-apollo';
@@ -61,6 +62,7 @@ export class ProductsPage {
                 price
                 images
                 sizeable
+                available
               }
             }
           }
@@ -117,7 +119,8 @@ export class ProductsPage {
   }
 
   openCollectionModal(collection){
-    let modal = this.modalCtrl.create(ProductContentPage, {collection: collection});
+    console.log(collection);
+    let modal = this.modalCtrl.create(CollectionsPage, {collection: collection});
     modal.present();
   }
 

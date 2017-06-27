@@ -1,5 +1,10 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="dark" align-title="center">
+    <ion-buttons start>
+      <button ion-button icon-only color="white" (click)="dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
       Collections
     </ion-title>
@@ -7,5 +12,15 @@
 </ion-header>
 
 <ion-content padding>
+
+  <ion-list *ngFor="let p of products">
+
+    <ion-card (tap)="openProductModal(p)"  *ngIf=p.available>
+      <img class="card-image" [src]="p.images[0]"/>
+      <div class="card-title">{{p.name}}</div>
+      <div class="card-subtitle">${{p.price}}</div>
+    </ion-card>
+
+  </ion-list>
 
 </ion-content>

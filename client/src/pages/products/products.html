@@ -15,8 +15,8 @@
 <ion-content>
 
   <ion-slides loop="true" pager="true" autoplay="5000" speed="1000" *ngIf="collections.length > 1">
-  	  <ion-slide class="slide" *ngFor="let c of collections">
-        <div class="image-container">
+  	  <ion-slide class="slide" *ngFor="let c of collections" (tap)="openCollectionModal(c)">
+        <div>
           <img class="collection-image" [src]="c.image"/>
 
         </div>
