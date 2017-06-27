@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-buttons start>
+  		<button ion-button menuToggle icon-only>
+      		<ion-icon name='menu'></ion-icon>
+    	</button>
+    </ion-buttons>
+    <ion-title>Check Out</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+<ion-input [(ngModel)]="cardinfo.number" placeholder="card number"></ion-input>
+<ion-input [(ngModel)]="cardinfo.expMonth" placeholder="expiry month"></ion-input>
+<ion-input [(ngModel)]="cardinfo.expYear" placeholder="expiry year"></ion-input>
+<ion-input [(ngModel)]="cardinfo.cvc" placeholder="cvc"></ion-input>
+<button ion-button (click)="pay()"> Pay Now </button>
+
+</ion-content>

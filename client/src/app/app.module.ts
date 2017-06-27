@@ -15,12 +15,15 @@ import { NewReleasePage } from '../pages/new_release/newrelease';
 import { SocialPage } from '../pages/social/social';
 import { LookBookPage } from '../pages/lookbook/lookbook';
 import { CartPage } from '../pages/cart/cart';
+import { CheckOutPage } from '../pages/checkout/checkout';
 import { CollectionsPage } from '../pages/collections/collections';
 import { SalePage } from '../pages/sale/sale';
 import { ContactPage } from '../pages/contact/contact';
 import { SignupPage } from '../pages/signup/signup';
 import { ApolloModule } from 'angular2-apollo';
 import { provideClient } from './client';
+import { Stripe } from '@ionic-native/stripe';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { provideClient } from './client';
     SocialPage,
     LookBookPage,
     CartPage,
+    CheckOutPage,
     CollectionsPage,
     SalePage,
     ContactPage,
@@ -65,11 +69,12 @@ import { provideClient } from './client';
     SocialPage,
     LookBookPage,
     CartPage,
+    CheckOutPage,
     CollectionsPage,
     SalePage,
     ContactPage,
     SignupPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Stripe]
 })
 export class AppModule {}
