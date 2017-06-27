@@ -16,6 +16,7 @@ import { ProductsPage } from '../products/products';
 export class ProductContentPage {
 
   product;
+  collection;
 
   constructor(
     public platform: Platform,
@@ -23,45 +24,19 @@ export class ProductContentPage {
     public viewCtrl: ViewController,
     public alertCtrl: AlertController
   ) {
-    var products = [
-      {
-        name: 'Soreem Sticker',
-        price: '2$',
-        image: 'assets/Images/SoreemSticker.jpeg',
-        collection: 'accessories'
-      },
-      {
-        name: 'IMatter Tee',
-        price: '20$',
-        image: 'assets/Images/ImatterTee.jpg',
-        collection: 'STAGE 1'
-      },
-      {
-        name: 'Black Unity Vest',
-        price: '90$',
-        image: 'assets/Images/BlackUnityVest.jpg',
-        collection: 'none'
-      },
-      {
-        name: 'Soreem Joggers',
-        price: '35$',
-        image: 'assets/Images/SoreemJoggers.jpg',
-        collection: 'Mes Racines'
-      },
-      {
-        name: 'Destroyed Flag Crewneck',
-        price: '45$',
-        image: 'assets/Images/DestroyedFlagCrewneck.jpg',
-        collection: 'Mes Racines'
-      },
-      {
-        name: 'Flag Beanie',
-        price: '15$',
-        image: 'assets/Images/FlagBeanie.jpg',
-        collection: 'none'
+      if(this.params.get('collection')){
+        this.collection = this.params.get('collection');
+        console.log(this.product);
       }
-    ];
-    this.product = products[this.params.get('charNum')];
+
+      if(this.params.get('product'))
+      {
+        this.product = this.params.get('product');
+        console.log(this.product);
+      }
+
+
+
   }
 
 

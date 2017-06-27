@@ -110,8 +110,14 @@ export class ProductsPage {
  	this.navCtrl.push(ProfilePage);
  }
 
- openModal(characterNum) {
-    let modal = this.modalCtrl.create(ProductContentPage, characterNum);
+ openProductModal(product) {
+    console.log(product);
+    let modal = this.modalCtrl.create(ProductContentPage, {product: product});
+    modal.present();
+  }
+
+  openCollectionModal(collection){
+    let modal = this.modalCtrl.create(ProductContentPage, {collection: collection});
     modal.present();
   }
 

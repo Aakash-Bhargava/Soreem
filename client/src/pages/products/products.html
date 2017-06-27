@@ -16,12 +16,12 @@
 	<ion-grid style="padding: 0px;">
 
 		<ion-row style="height: 200px;">
-			<ion-slides color="dark"  autoplay="4500" loop="true" speed="1000" pager="true" paginationType="fraction">
+			<ion-slides color="dark"  autoplay="4500" loop="true" speed="1000" pager="true" paginationType="fraction" *ngFor="let c of collections">
 
-			  <ion-slide class="slide" style="background-image: url(/assets/Images/slide0.jpg);">
+			  <ion-slide class="slide" style="background-image: url({{c.image}});">
 			  </ion-slide>
 
-        <ion-slide class="slide" style="background-image: url(/assets/Images/slide2.jpg);">
+        <!-- <ion-slide class="slide" style="background-image: url(/assets/Images/slide2.jpg);">
 		  	</ion-slide>
 
         <ion-slide class="slide" style="background-image: url(/assets/Images/slide3.jpg);">
@@ -31,13 +31,13 @@
 		  	</ion-slide>
 
         <ion-slide class="slide" style="background-image: url(/assets/Images/slide5.jpg);">
-		  	</ion-slide>
+		  	</ion-slide> -->
 
 			</ion-slides>
 		</ion-row>
 
 <!-- Segment (All/Collections)-->
-    <div padding>
+    <!-- <div padding>
       <ion-segment [(ngModel)]="productView">
         <ion-segment-button value="all">
           All
@@ -46,16 +46,16 @@
           Collections
         </ion-segment-button>
       </ion-segment>
-    </div>
+    </div> -->
 
 <!-- Switch Cases -->
-    <div [ngSwitch]="productView">
-      <ion-list *ngSwitchCase="'all'">
+    <!-- <div [ngSwitch]="productView"> -->
+      <ion-list>
         <ion-grid>
           <ion-row wrap>
         		<ion-col width-50 *ngFor="let p of allAvailable">
-        			<ion-card>
-      	    		<img class="card-image" src="{{p.images[0]}}"/>
+        			<ion-card (tap)="openProductModal(p)">
+      	    		<img class="card-image" [src]="p.images[0]"/>
       	    		<div class="card-title">{{p.name}}</div>
       	    		<div class="card-subtitle">${{p.price}}</div>
       		    </ion-card>
@@ -63,12 +63,12 @@
           </ion-row>
         </ion-grid>
       </ion-list>
-    </div>
+    <!-- </div> -->
 
-    <div [ngSwitch]="productView">
+    <!-- <div [ngSwitch]="productView">
       <ion-list *ngSwitchCase="'collections'">
         <ion-card class="collectionCard" *ngFor="let c of collections">
-          <img class="collectionImage" src="{{c.image}}"/>
+          <img class="collectionImage" [src]="c.image"/>
           <ion-card-content>
             <p>
               {{c.name}}
@@ -76,7 +76,7 @@
           </ion-card-content>
         </ion-card>
       </ion-list>
-    </div>
+    </div> -->
 
 
 
