@@ -13,180 +13,33 @@
 </ion-header>
 
 <ion-content>
-	<ion-grid style="padding: 0px;">
 
-		<ion-row style="height: 200px;">
-			<ion-slides color="dark"  autoplay="4500" loop="true" speed="1000" pager="true" paginationType="fraction" *ngFor="let c of collections">
+  <ion-slides loop="true" pager="true" autoplay="5000" speed="1000" *ngIf="collections.length > 1">
+  	  <ion-slide class="slide" *ngFor="let c of collections">
+        <div class="image-container">
+          <img class="collection-image" [src]="c.image"/>
 
-			  <ion-slide class="slide" style="background-image: url({{c.image}});">
-			  </ion-slide>
+        </div>
+        <h1 class="collection-name">
+          {{c.name}}
+        </h1>
 
-        <!-- <ion-slide class="slide" style="background-image: url(/assets/Images/slide2.jpg);">
-		  	</ion-slide>
+  	  </ion-slide>
 
-        <ion-slide class="slide" style="background-image: url(/assets/Images/slide3.jpg);">
-		  	</ion-slide>
+  </ion-slides>
 
-        <ion-slide class="slide" style="background-image: url(/assets/Images/slide4.jpeg);">
-		  	</ion-slide>
+  <ion-list>
+    <ion-grid>
+      <ion-row wrap>
+    		<ion-col width-50 *ngFor="let p of allAvailable">
+    			<ion-card (tap)="openProductModal(p)">
+  	    		<img class="card-image" [src]="p.images[0]"/>
+  	    		<div class="card-title">{{p.name}}</div>
+  	    		<div class="card-subtitle">${{p.price}}</div>
+  		    </ion-card>
+    		</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
 
-        <ion-slide class="slide" style="background-image: url(/assets/Images/slide5.jpg);">
-		  	</ion-slide> -->
-
-			</ion-slides>
-		</ion-row>
-
-<!-- Segment (All/Collections)-->
-    <!-- <div padding>
-      <ion-segment [(ngModel)]="productView">
-        <ion-segment-button value="all">
-          All
-        </ion-segment-button>
-        <ion-segment-button value="collections">
-          Collections
-        </ion-segment-button>
-      </ion-segment>
-    </div> -->
-
-<!-- Switch Cases -->
-    <!-- <div [ngSwitch]="productView"> -->
-      <ion-list>
-        <ion-grid>
-          <ion-row wrap>
-        		<ion-col width-50 *ngFor="let p of allAvailable">
-        			<ion-card (tap)="openProductModal(p)">
-      	    		<img class="card-image" [src]="p.images[0]"/>
-      	    		<div class="card-title">{{p.name}}</div>
-      	    		<div class="card-subtitle">${{p.price}}</div>
-      		    </ion-card>
-        		</ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-list>
-    <!-- </div> -->
-
-    <!-- <div [ngSwitch]="productView">
-      <ion-list *ngSwitchCase="'collections'">
-        <ion-card class="collectionCard" *ngFor="let c of collections">
-          <img class="collectionImage" [src]="c.image"/>
-          <ion-card-content>
-            <p>
-              {{c.name}}
-            </p>
-          </ion-card-content>
-        </ion-card>
-      </ion-list>
-    </div> -->
-
-
-
-    <!-- <div [ngSwitch]="products">
-      <ion-list *ngSwitchCase="'all'">
-        <ion-row>
-      		<ion-col width-50>
-      			<ion-card (click)='openModal({charNum: 0})'>
-    	    		<img src="/assets/Images/SoreemSticker.jpeg"/>
-    	    		<div class="card-title">Soreem Sticker</div>
-    	    		<div class="card-subtitle">$2</div>
-    		    </ion-card>
-      		</ion-col>
-
-      		<ion-col width-50>
-        			<ion-card (click)='openModal({charNum: 1})'>
-    				    <img src="/assets/Images/ImatterTee.jpg"/>
-    				    <div class="card-title">IMatter Tee</div>
-    				    <div class="card-subtitle">$20</div>
-    				</ion-card>
-      		</ion-col>
-    		</ion-row>
-
-      		<ion-row>
-        		<ion-col width-50>
-        			<ion-card (click)='openModal({charNum: 2})'>
-    		    		<img src="/assets/Images/BlackUnityVest.jpg"/>
-    		    		<div class="card-title">Black Unity Vest</div>
-    		    		<div class="card-subtitle">$90</div>
-    				</ion-card>
-        		</ion-col>
-        		<ion-col width-50>
-        			<ion-card (click)='openModal({charNum: 3})'>
-    				    <img src="/assets/Images/SoreemJoggers.jpg"/>
-    				    <div class="card-title">Soreem Joggers</div>
-    				    <div class="card-subtitle">$35</div>
-    				</ion-card>
-        		</ion-col>
-      		</ion-row>
-
-      		<ion-row>
-        		<ion-col width-50>
-        			<ion-card (click)='openModal({charNum: 4})'>
-    		    		<img src="/assets/Images/DestroyedFlagCrewneck.jpg"/>
-    		    		<div class="card-title">Destroyed Flag Crewneck</div>
-    		    		<div class="card-subtitle">$45</div>
-    				</ion-card>
-        		</ion-col>
-        		<ion-col width-50>
-        			<ion-card (click)='openModal({charNum: 5})'>
-    				    <img src="/assets/Images/FlagBeanie.jpg"/>
-    				    <div class="card-title">Flag Beanie</div>
-    				    <div class="card-subtitle">$15</div>
-    				</ion-card>
-        		</ion-col>
-      		</ion-row>
-      </ion-list>
-    </div>
-
-    <div [ngSwitch]="products">
-      <ion-list *ngSwitchCase="'collections'">
-        <ion-card *ngFor="let c of collections">
-            <div class="collection-title">{{ c.name }}</div>
-            <img src= "{{c.image}}"/>
-        </ion-card>
-      </ion-list>
-    </div> -->
-
-	</ion-grid>
 </ion-content>
-
-
-<!-- Segment buttons with icons -->
-<!--<div padding>
-  <ion-segment [(ngModel)]="products">
-    <ion-segment-button value="all">
-      All
-    </ion-segment-button>
-    <ion-segment-button value="collections">
-      Collections
-    </ion-segment-button>
-  </ion-segment>
-</div>
-
-<div [ngSwitch]="products">
-  <ion-list *ngSwitchCase="'all'">
-    <div>
-      <div>
-        <ion-card>
-          <img src="assets/images/ImatterTee.jpg">
-          <div class="card-title">I Matter Tee</div>
-          <div class="card-subtitle">$20</div>
-        </ion-card>
-      </div>
-
-      <div>
-        <ion-card>
-          <img src="assets/images/Soreem1.jpg">
-          <div class="card-title">I Matter Tee</div>
-          <div class="card-subtitle">$20</div>
-        </ion-card>
-      </div>
-    </div>
-
-  </ion-list>
-
-  <ion-list *ngSwitchCase="'collections'">
-
-
-  </ion-list>
-</div>
-
-</ion-content> -->
