@@ -12,13 +12,29 @@
 </ion-header>
 
 
-<ion-content>
-
-
-<ion-input [(ngModel)]="cardinfo.number" placeholder="card number"></ion-input>
-<ion-input [(ngModel)]="cardinfo.expMonth" placeholder="expiry month"></ion-input>
-<ion-input [(ngModel)]="cardinfo.expYear" placeholder="expiry year"></ion-input>
-<ion-input [(ngModel)]="cardinfo.cvc" placeholder="cvc"></ion-input>
-<button ion-button (click)="pay()"> Pay Now </button>
-
+<ion-content padding>
+  <div>
+    <img [src]="cardImage" />
+    <ion-fab right class="pop-in" [ngClass]="{'pop-out': fabGone}" style="top: 17rem;">
+      <button ion-fab mini (click)="scanCard()" color="dark"><ion-icon name="camera"></ion-icon></button>
+    </ion-fab>
+  </div>
+  <div>
+    <ion-item>
+      <ion-label>Card Number</ion-label>
+      <ion-input type="text" [(ngModel)]="card.cardNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Expiry Month</ion-label>
+      <ion-input type="text" [(ngModel)]="card.expiryMonth"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Expiry Year</ion-label>
+      <ion-input type="text" [(ngModel)]="card.expiryYear"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>CVV</ion-label>
+      <ion-input type="text" [(ngModel)]="card.cvv"></ion-input>
+    </ion-item>
+  </div>
 </ion-content>
