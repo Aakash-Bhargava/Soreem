@@ -24,7 +24,11 @@
           <img [src]="item.images[0]">
         </ion-thumbnail>
         <h2>{{item.name}}</h2>
+        <ion-note item-right>{{item.size}}</ion-note>
+        <ion-note item-right>{{item.amount}}</ion-note>
+
         <ion-note item-right>${{item.price}}</ion-note>
+
     	</ion-item>
       <ion-item>
         <h3> Subtotal </h3>

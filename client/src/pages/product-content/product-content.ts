@@ -43,50 +43,6 @@ export class ProductContentPage {
       }
   }
 
-
-  //Alert created when Size is chosen.
-  doRadio() {
-    let alert = this.alertCtrl.create({
-    title: 'Size',
-    inputs: [
-      {
-        type: 'radio',
-        label: 'S',
-        value: 'small'
-      },
-      {
-        type: 'radio',
-        label: 'M',
-        value: 'medium'
-      },
-      {
-        type: 'radio',
-        label: 'L',
-        value: 'large'
-      },
-      {
-        type: 'radio',
-        label: 'X',
-        value: 'xlarge'
-      }
-    ],
-    buttons : [
-      {
-        text: 'Cancel'
-      },
-      {
-        text: 'Ok',
-        handler: (data: any) => {
-          console.log('Radio data:', data);
-        }
-      }
-    ]
-  });
-
-  alert.present();
-  }
-
-
   dismiss() {
     this.viewCtrl.dismiss();
   }
@@ -97,8 +53,17 @@ export class ProductContentPage {
     {
       if((this.size != null && this.product.sizeable) || !this.product.sizeable)
       {
+        this.product.amount = this.amount;
+
+        if(this.product.sizeable){
+          this.product.size = this.size;
+        }
+        else{
+          this.product.size = "N/A";
+        }
         if (!this.currentCart) {
           this.newCart.push(this.product);
+          console.log(this.product);
           window.localStorage.setItem('cart', JSON.stringify(this.newCart));
           let toast = this.toastCtrl.create({
             message: 'Item Added',
@@ -107,20 +72,21 @@ export class ProductContentPage {
           });
           toast.present();
           this.viewCtrl.dismiss();
+
           return;
-        } else {
-          for (let item of this.currentCart) {
-            if (item.id == this.product.id) {
-              let toast = this.toastCtrl.create({
-                message: 'You already have this item in your cart!',
-                duration: 3000,
-                position: 'top'
-              });
-              toast.present();
-              return;
+          } else {
+            for (let item of this.currentCart) {
+              if (item.id == this.product.id) {
+                let toast = this.toastCtrl.create({
+                  message: 'You already have this item in your cart!',
+                  duration: 3000,
+                  position: 'top'
+                });
+                toast.present();
+                return;
+              }
             }
           }
-        }
         this.currentCart.push(this.product);
         window.localStorage.setItem('cart', JSON.stringify(this.currentCart));
         let toast = this.toastCtrl.create({
