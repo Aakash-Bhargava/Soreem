@@ -19,6 +19,7 @@ export class ProductContentPage {
   collection: any;
   currentCart = <any>[];
   newCart = <any>[];
+  amount;
 
   constructor(
     public platform: Platform,
@@ -27,6 +28,7 @@ export class ProductContentPage {
     public alertCtrl: AlertController,
     public toastCtrl: ToastController
   ) {
+      this.amount = 0;
       this.currentCart = window.localStorage.getItem('cart');
       this.currentCart = JSON.parse(this.currentCart);
       console.log(this.currentCart);
@@ -122,5 +124,18 @@ export class ProductContentPage {
     this.viewCtrl.dismiss();
 
   }
+
+
+    increaseAmount(){
+      console.log("increase");
+      this.amount = this.amount + 1;
+    }
+
+    decreaseAmount(){
+      if(this.amount > 0 ){
+        this.amount = this.amount - 1;
+      }
+    }
+
 
 }

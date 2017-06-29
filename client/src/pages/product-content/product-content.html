@@ -21,9 +21,10 @@
   <div class="product">
     <img [src]="product.images[0]">
     <h1><span>${{product.price}}</span> - {{product.name}}</h1>
+    <p class="product-notes"> {{product.notes}}</p>
   </div>
   <ion-list>
-    <ion-item>
+    <ion-item *ngIf="product.sizeable">
        <ion-label>Size</ion-label>
        <ion-select [(ngModel)]="size">
          <ion-option value="small">Small</ion-option>
@@ -31,6 +32,18 @@
          <ion-option value="large">Large</ion-option>
          <ion-option value="xlarge">X-Large</ion-option>
        </ion-select>
+     </ion-item>
+     <ion-item>
+       <ion-label>Amount</ion-label>
+       <button ion-button icon-only clear (tap)="decreaseAmount()">
+         <ion-icon name="remove"></ion-icon>
+       </button>
+       <p style="text-align:center">
+         {{amount}}
+       </p>
+       <button ion-button icon-only clear (tap)="increaseAmount()">
+         <ion-icon name="add"></ion-icon>
+       </button>
      </ion-item>
   </ion-list>
   <div class="cart">

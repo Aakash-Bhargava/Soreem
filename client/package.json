@@ -19,6 +19,8 @@
         "@angular/platform-browser": "4.2.4",
         "@angular/platform-browser-dynamic": "4.2.4",
         "@angular/platform-server": "4.2.4",
+        "@ionic-native/core": "^3.12.1",
+        "@ionic-native/device": "^3.12.1",
         "@ionic-native/stripe": "^3.12.1",
         "@ionic/storage": "2.0.1",
         "angular2-apollo": "^0.9.0",

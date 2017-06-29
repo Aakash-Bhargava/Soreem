@@ -10,7 +10,7 @@ page-product {
 	}
 
 	.image-container{
-		
+
 	}
 
 	.collection-name{
@@ -31,7 +31,10 @@ page-product {
 
 	ion-card{
 		position: relative;
-    	text-align: center;
+    text-align: center;
+		padding: 0px;
+		min-height: 180px;
+		max-height: 180px;
 	}
 
 	.card-image{
@@ -40,21 +43,18 @@ page-product {
 	}
 
 	.card-title{
-			position: absolute;
-    	top: 25%;
-    	font-size: 1.0em;
-	    width: 100%;
-	    font-weight: bold;
-	    color: #fff;
+		padding: 0px;
+		font-size: .9em;
+		font-weight: bold;
 	}
 
-	.card-subtitle{
-			top: 75%;
-			font-size: .8em;
-	    position: absolute;
-	    width: 100%;
-	    color: #fff;
+	.card-price{
+		padding-top: 5px;
+		padding-bottom: 10px;
+		font-size: .8em;
 	}
+
+
 
 	.collection-title{
 		font-size: 1.5em;

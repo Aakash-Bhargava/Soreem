@@ -33,9 +33,14 @@
       <ion-row wrap>
     		<ion-col width-50 *ngFor="let p of allAvailable">
     			<ion-card (tap)="openProductModal(p)">
-  	    		<img class="card-image" [src]="p.images[0]"/>
-  	    		<div class="card-title">{{p.name}}</div>
-  	    		<div class="card-subtitle">${{p.price}}</div>
+            <img class="card-image" [src]="p.images[0]"/>
+            <ion-card-content>
+              <ion-card-title class="card-title">
+                {{p.name}}
+              </ion-card-title>
+              <p class="card-price">${{p.price}}</p>
+            </ion-card-content>
+
   		    </ion-card>
     		</ion-col>
       </ion-row>

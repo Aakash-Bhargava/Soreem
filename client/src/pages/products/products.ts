@@ -96,6 +96,7 @@ export class ProductsPage {
             sizeable
             images
             available
+            notes
           }
         }
         `
