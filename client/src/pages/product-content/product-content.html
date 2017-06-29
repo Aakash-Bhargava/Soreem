@@ -34,14 +34,14 @@
        </ion-select>
      </ion-item>
      <ion-item>
-       <ion-label>Amount</ion-label>
-       <button ion-button icon-only clear (tap)="decreaseAmount()">
+       <ion-label item-left>Amount</ion-label>
+       <button item-right ion-button icon-only clear (tap)="decreaseAmount()">
          <ion-icon name="remove"></ion-icon>
        </button>
-       <p style="text-align:center">
+       <p item-right>
          {{amount}}
        </p>
-       <button ion-button icon-only clear (tap)="increaseAmount()">
+       <button item-right ion-button icon-only clear (tap)="increaseAmount()">
          <ion-icon name="add"></ion-icon>
        </button>
      </ion-item>
