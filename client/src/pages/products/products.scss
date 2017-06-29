@@ -2,15 +2,11 @@
 page-product {
 
 	.slides{
-		max-height: 35%;
+		max-height: 40%;
 	}
 
 	.collection-image{
-		// filter:opacity(85%);
-	}
-
-	.image-container{
-
+		width: 100%;
 	}
 
 	.collection-name{
@@ -21,7 +17,7 @@ page-product {
 
   	font-weight: bold;
 
-  	top: 45%;
+  	top: 40%;
   	left: 25%;
 		right: 25%;
 		bottom: 40%;
