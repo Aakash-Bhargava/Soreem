@@ -23,6 +23,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { ApolloModule } from 'angular2-apollo';
 import { provideClient } from './client';
 import { Stripe } from '@ionic-native/stripe';
+import { CardIO } from '@ionic-native/card-io';
 
 
 @NgModule({
@@ -75,6 +76,6 @@ import { Stripe } from '@ionic-native/stripe';
     ContactPage,
     SignupPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Stripe]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Stripe, CardIO]
 })
 export class AppModule {}
