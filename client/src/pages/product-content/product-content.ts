@@ -20,6 +20,7 @@ export class ProductContentPage {
   currentCart = <any>[];
   newCart = <any>[];
   amount;
+  size;
 
   constructor(
     public platform: Platform,
@@ -29,6 +30,7 @@ export class ProductContentPage {
     public toastCtrl: ToastController
   ) {
       this.amount = 0;
+
       this.currentCart = window.localStorage.getItem('cart');
       this.currentCart = JSON.parse(this.currentCart);
       console.log(this.currentCart);
@@ -37,6 +39,7 @@ export class ProductContentPage {
       {
         this.product = this.params.get('product');
         console.log(this.product);
+
       }
   }
 
@@ -89,39 +92,63 @@ export class ProductContentPage {
   }
 
   addToCart() {
-    if (!this.currentCart) {
-      this.newCart.push(this.product);
-      window.localStorage.setItem('cart', JSON.stringify(this.newCart));
-      let toast = this.toastCtrl.create({
-        message: 'Item Added',
-        duration: 3000,
-        position: 'top'
-      });
-      toast.present();
-      this.viewCtrl.dismiss();
-      return;
-    } else {
-      for (let item of this.currentCart) {
-        if (item.id == this.product.id) {
+    console.log(this.size);
+    if(this.amount > 0)
+    {
+      if((this.size != null && this.product.sizeable) || !this.product.sizeable)
+      {
+        if (!this.currentCart) {
+          this.newCart.push(this.product);
+          window.localStorage.setItem('cart', JSON.stringify(this.newCart));
           let toast = this.toastCtrl.create({
-            message: 'You already have this item in your cart!',
+            message: 'Item Added',
             duration: 3000,
             position: 'top'
           });
           toast.present();
+          this.viewCtrl.dismiss();
           return;
+        } else {
+          for (let item of this.currentCart) {
+            if (item.id == this.product.id) {
+              let toast = this.toastCtrl.create({
+                message: 'You already have this item in your cart!',
+                duration: 3000,
+                position: 'top'
+              });
+              toast.present();
+              return;
+            }
+          }
         }
+        this.currentCart.push(this.product);
+        window.localStorage.setItem('cart', JSON.stringify(this.currentCart));
+        let toast = this.toastCtrl.create({
+          message: 'Item Added',
+          duration: 3000,
+          position: 'top'
+        });
+        toast.present();
+        this.viewCtrl.dismiss();
+      }
+      else{
+        let toast = this.toastCtrl.create({
+          message: 'Please Select A Size',
+          duration: 3000,
+          position: 'bottom'
+        });
+        toast.present();
       }
     }
-    this.currentCart.push(this.product);
-    window.localStorage.setItem('cart', JSON.stringify(this.currentCart));
-    let toast = this.toastCtrl.create({
-      message: 'Item Added',
-      duration: 3000,
-      position: 'top'
-    });
-    toast.present();
-    this.viewCtrl.dismiss();
+    else{
+      let toast = this.toastCtrl.create({
+        message: 'Invalid Amount',
+        duration: 3000,
+        position: 'bottom'
+      });
+      toast.present();
+    }
+    //if amount is 0
 
   }
 
