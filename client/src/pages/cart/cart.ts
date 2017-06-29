@@ -19,7 +19,7 @@ export class CartPage {
     this.total = 0;
     if (this.currentCart.length > 0) {
       for (let item of this.currentCart) {
-        this.total += item.price;
+        this.total += item.price * item.amount;
       }
     }
     console.log(this.currentCart);
