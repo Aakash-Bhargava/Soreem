@@ -29,5 +29,18 @@ export class CartPage {
     this.navCtrl.push(CheckOutPage);
   }
 
+  deleteItem(item) {
+    this.currentCart = this.currentCart.filter(function(element, i) {
+      return element.id !== item.id;
+    });
+    this.total = 0;
+    if (this.currentCart.length > 0) {
+      for (let item of this.currentCart) {
+        this.total += item.price * item.amount;
+      }
+    }
+    window.localStorage.setItem('cart', JSON.stringify(this.currentCart));
+  }
+
 
 }
