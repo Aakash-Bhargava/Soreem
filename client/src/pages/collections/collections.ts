@@ -3,7 +3,7 @@ import { NavController, ViewController, NavParams, ModalController } from 'ionic
 import { ProductContentPage } from '../product-content/product-content';
 
 @Component({
-  selector: 'page-about',
+  selector: 'page-collection',
   templateUrl: 'collections.html'
 })
 export class CollectionsPage {

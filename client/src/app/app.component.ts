@@ -7,10 +7,13 @@ import { LoginPage } from '../pages/login/login';
 import { WishListPage } from '../pages/wishlist/wishlist';
 import { ProfilePage } from '../pages/profile/profile';
 import { FaqPage } from '../pages/faq/faq';
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
 
 
 
 @Component({
+  selector: 'page-menu',
   templateUrl: 'app.html'
 })
 
@@ -19,7 +22,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage : any;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -34,13 +37,13 @@ export class MyApp {
       this.rootPage = LoginPage;
     }
 
-
       this.pages = [
-      { title: 'Home', component: TabsPage },
-      { title: 'Events', component: EventsPage},
-      { title: 'Wishlist', component: WishListPage },
-      { title: 'Profile', component: ProfilePage },
-      { title: 'FAQ', component: FaqPage}
+      { title: 'Home', component: TabsPage , icon: 'home'},
+      { title: 'Profile', component: ProfilePage, icon: 'person'},
+      { title: 'Shows', component: EventsPage, icon: 'calendar'},
+      { title: 'FAQ', component: FaqPage, icon:'filing'},
+      { title: 'About', component: AboutPage, icon: 'information-circle'},
+      { title: 'Contact Us', component: ContactPage, icon:'mail'}
     ];
 
     });

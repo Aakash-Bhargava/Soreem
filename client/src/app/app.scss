@@ -14,3 +14,23 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+page-menu{
+  .toolbar-title{
+    color: white !important;
+  }
+
+  .menu{
+    background: linear-gradient(to left top, #000000, #434343);
+  }
+  .button{
+
+    background: transparent;
+    color: white;
+  }
+
+  .item-inner{
+    border-bottom: none !important;
+  }
+}
