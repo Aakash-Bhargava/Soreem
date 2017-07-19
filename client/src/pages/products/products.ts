@@ -63,6 +63,7 @@ export class ProductsPage {
                 images
                 sizeable
                 available
+                photoPath
               }
             }
           }
@@ -97,6 +98,7 @@ export class ProductsPage {
             images
             available
             notes
+            photoPath
           }
         }
         `

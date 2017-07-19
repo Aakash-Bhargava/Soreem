@@ -23,14 +23,19 @@ page-menu{
 
   .menu{
     background: linear-gradient(to left top, #000000, #434343);
+
+    .item-inner{
+      border-bottom: none !important;
+    }
+    
   }
-  .button{
+  .menuBtn{
 
     background: transparent;
     color: white;
+
+
   }
 
-  .item-inner{
-    border-bottom: none !important;
-  }
+
 }
