@@ -9,6 +9,10 @@ import { ProfilePage } from '../pages/profile/profile';
 import { FaqPage } from '../pages/faq/faq';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
+import { ShippingPage } from '../pages/shipping/shipping';
+import { ReturnPolicyPage } from '../pages/returnPolicy/returnPolicy';
+import { FemaleCampaignPage } from '../pages/femaleCampaign/femaleCampaign';
+
 
 
 
@@ -39,10 +43,13 @@ export class MyApp {
 
       this.pages = [
       { title: 'Home', component: TabsPage , icon: 'home'},
-      { title: 'Profile', component: ProfilePage, icon: 'person'},
-      { title: 'Shows', component: EventsPage, icon: 'calendar'},
-      { title: 'FAQ', component: FaqPage, icon:'filing'},
       { title: 'About', component: AboutPage, icon: 'information-circle'},
+      { title: 'Shipping', component: ShippingPage, icon: 'person'},
+      // { title: 'Shows', component: EventsPage, icon: 'calendar'},
+      { title: 'Return Policy', component: ReturnPolicyPage, icon:'filing'},
+      { title: 'Female Campaign', component: FemaleCampaignPage, icon: 'person'},
+      { title: 'FAQ', component: FaqPage, icon:'help-circle'},
+
       { title: 'Contact Us', component: ContactPage, icon:'mail'}
     ];
 

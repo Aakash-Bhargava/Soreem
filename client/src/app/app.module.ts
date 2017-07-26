@@ -9,15 +9,14 @@ import { ProductContentPage } from '../pages/product-content/product-content';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage }  from '../pages/login/login';
 import { SettingsPage } from '../pages/settings/settings';
-import { WishListPage } from '../pages/wishlist/wishlist';
+import { FemaleCampaignPage } from '../pages/femaleCampaign/femaleCampaign';
 import { EventsPage } from '../pages/events/events';
-import { NewReleasePage } from '../pages/new_release/newrelease';
-import { SocialPage } from '../pages/social/social';
+import { ReturnPolicyPage } from '../pages/returnPolicy/returnPolicy';
 import { LookBookPage } from '../pages/lookbook/lookbook';
 import { CartPage } from '../pages/cart/cart';
 import { CheckOutPage } from '../pages/checkout/checkout';
 import { CollectionsPage } from '../pages/collections/collections';
-import { SalePage } from '../pages/sale/sale';
+import { ShippingPage } from '../pages/shipping/shipping';
 import { ContactPage } from '../pages/contact/contact';
 import { SignupPage } from '../pages/signup/signup';
 import { ApolloModule } from 'angular2-apollo';
@@ -37,15 +36,14 @@ import { CardIO } from '@ionic-native/card-io';
     TabsPage,
     LoginPage,
     SettingsPage,
-    WishListPage,
+    FemaleCampaignPage,
     EventsPage,
-    NewReleasePage,
-    SocialPage,
+    ReturnPolicyPage,
     LookBookPage,
     CartPage,
     CheckOutPage,
     CollectionsPage,
-    SalePage,
+    ShippingPage,
     ContactPage,
     SignupPage
   ],
@@ -64,15 +62,14 @@ import { CardIO } from '@ionic-native/card-io';
     TabsPage,
     LoginPage,
     SettingsPage,
-    WishListPage,
+    FemaleCampaignPage,
     EventsPage,
-    NewReleasePage,
-    SocialPage,
+    ReturnPolicyPage,
     LookBookPage,
     CartPage,
     CheckOutPage,
     CollectionsPage,
-    SalePage,
+    ShippingPage,
     ContactPage,
     SignupPage
   ],

@@ -21,12 +21,16 @@ export class SignupPage {
 
   email = "";
   password = "";
-  birthday = "";
+  birthday : any;
+  firstName = "";
+  lastName = "";
   LoginInfo = <any>{};
   private signupForm : FormGroup;
 
   constructor(public navCtrl: NavController,  public formBuilder: FormBuilder, private apollo: Angular2Apollo) {
 	  	this.signupForm = this.formBuilder.group({
+          firstName: ['', Validators.compose([Validators.required, Validators.minLength(2)])],
+          lastName: ['', Validators.compose([Validators.required, Validators.minLength(1)])],
       		email: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
       		password: ['', Validators.compose([Validators.maxLength(30), Validators.minLength(5),
       					   Validators.required])],
@@ -53,9 +57,16 @@ export class SignupPage {
     return this.apollo.mutate({
       mutation: gql`
       mutation createUser($email: String!,
-                          $password: String!){
-        createUser(authProvider: {email: {email: $email, password: $password}}) {
+                          $password: String!,
+                          $firstName: String,
+                          $lastName: String,
+                          $birthday: DateTime){
+        createUser(authProvider: {email: {email: $email, password: $password}},
+          firstName: $firstName,
+          lastName: $lastName,
+          birthday: $birthday) {
           id
+
         }
         signinUser(email: {email: $email, password: $password}){
           token
@@ -64,7 +75,11 @@ export class SignupPage {
       `,
       variables: {
         email: this.email,
-        password: this.password
+        password: this.password,
+        firstName: this.firstName,
+        lastName: this.lastName,
+        birthday: this.birthday
+
       }
     }).toPromise();
   }

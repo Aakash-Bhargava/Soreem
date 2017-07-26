@@ -24,6 +24,8 @@ export class ProfilePage {
   user = <any>{};
   email = "";
   password = "";
+  firstName = "";
+  lastName = "";
 
   constructor(public navCtrl: NavController, private apollo: Angular2Apollo) {
 
@@ -55,6 +57,8 @@ export class ProfilePage {
        this.userInfo = data;
        this.user = this.userInfo.user;
        this.email = this.user.email;
+       this.firstName = this.user.firstName;
+       this.lastName = this.user.lastName;
        console.log(this.userInfo);
        console.log(this.email);
      }
@@ -69,6 +73,9 @@ export class ProfilePage {
          user{
            id
            email
+           firstName
+           lastName
+           birthday
           }
          }
      `

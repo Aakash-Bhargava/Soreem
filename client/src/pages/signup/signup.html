@@ -16,6 +16,16 @@
 	<form [formGroup]="signupForm">
 
       <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input type="text" formControlName="firstName" [(ngModel)]="firstName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input type="text" formControlName="lastName" [(ngModel)]="lastName"></ion-input>
+      </ion-item>
+
+      <ion-item>
         <ion-label floating>E-mail</ion-label>
         <ion-input type="text" formControlName="email" [(ngModel)]="email"></ion-input>
       </ion-item>

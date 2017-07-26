@@ -3,7 +3,9 @@ import { ProductsPage } from '../products/products';
 import { ContactPage } from '../contact/contact';
 import { SettingsPage } from '../settings/settings';
 import { AboutPage } from '../about/about';
-import { LookBookPage } from '../lookbook/lookbook';
+// import { LookBookPage } from '../lookbook/lookbook';
+import { EventsPage } from '../events/events';
+
 import { CartPage } from '../cart/cart';
 
 @Component({
@@ -14,7 +16,7 @@ export class TabsPage {
   // should be each tab's root Page
   Products: any = ProductsPage;
   About: any = AboutPage;
-  Lookbook: any = LookBookPage;
+  Shows: any = EventsPage;
   Contact: any = ContactPage;
   ShoppingBag: any = CartPage;
   constructor() {}
