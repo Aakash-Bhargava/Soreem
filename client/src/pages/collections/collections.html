@@ -16,7 +16,7 @@
   <ion-list *ngFor="let p of products">
 
     <ion-card (tap)="openProductModal(p)"  *ngIf=p.available>
-      <img class="card-image" src="../../assets/Images/{{p.photoPath}}"/>
+      <img class="card-image" src="../../assets/Images/products/{{p.photoPath}}"/>
       <div class="card-title">{{p.name}}</div>
       <p class="card-subtitle">${{p.price}}</p>
     </ion-card>

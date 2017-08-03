@@ -10,7 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage }  from '../pages/login/login';
 import { SettingsPage } from '../pages/settings/settings';
 import { FemaleCampaignPage } from '../pages/femaleCampaign/femaleCampaign';
-import { EventsPage } from '../pages/events/events';
+import { ShowsPage } from '../pages/shows/shows';
 import { ReturnPolicyPage } from '../pages/returnPolicy/returnPolicy';
 import { LookBookPage } from '../pages/lookbook/lookbook';
 import { CartPage } from '../pages/cart/cart';
@@ -37,7 +37,7 @@ import { CardIO } from '@ionic-native/card-io';
     LoginPage,
     SettingsPage,
     FemaleCampaignPage,
-    EventsPage,
+    ShowsPage,
     ReturnPolicyPage,
     LookBookPage,
     CartPage,
@@ -63,7 +63,7 @@ import { CardIO } from '@ionic-native/card-io';
     LoginPage,
     SettingsPage,
     FemaleCampaignPage,
-    EventsPage,
+    ShowsPage,
     ReturnPolicyPage,
     LookBookPage,
     CartPage,

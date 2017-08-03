@@ -33,7 +33,7 @@
       <ion-row wrap>
     		<ion-col width-50 *ngFor="let p of allAvailable">
     			<ion-card (tap)="openProductModal(p)">
-            <img class="card-image" src="../../assets/Images/{{p.photoPath}}" />
+            <img class="card-image" src="../../assets/Images/products/{{p.photoPath}}" />
             <ion-card-content>
               <ion-card-title class="card-title">
                 {{p.name}}

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      Shows
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let show of allShows">
+    <img src="../../Images/shows/{{show.altName}}/{{show.altName}}.jpg"/>
+    <ion-card-header>
+      {{show.name}}
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>

@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { TabsPage } from '../pages/tabs/tabs';
-import { EventsPage } from '../pages/events/events';
 import { LoginPage } from '../pages/login/login';
 import { WishListPage } from '../pages/wishlist/wishlist';
 import { ProfilePage } from '../pages/profile/profile';
@@ -45,7 +44,6 @@ export class MyApp {
       { title: 'Home', component: TabsPage , icon: 'home'},
       { title: 'About', component: AboutPage, icon: 'information-circle'},
       { title: 'Shipping', component: ShippingPage, icon: 'person'},
-      // { title: 'Shows', component: EventsPage, icon: 'calendar'},
       { title: 'Return Policy', component: ReturnPolicyPage, icon:'filing'},
       { title: 'Female Campaign', component: FemaleCampaignPage, icon: 'person'},
       { title: 'FAQ', component: FaqPage, icon:'help-circle'},
