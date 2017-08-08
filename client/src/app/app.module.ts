@@ -18,11 +18,14 @@ import { CheckOutPage } from '../pages/checkout/checkout';
 import { CollectionsPage } from '../pages/collections/collections';
 import { ShippingPage } from '../pages/shipping/shipping';
 import { ContactPage } from '../pages/contact/contact';
+import { ShowContentPage } from '../pages/show-content/show-content';
 import { SignupPage } from '../pages/signup/signup';
 import { ApolloModule } from 'angular2-apollo';
 import { provideClient } from './client';
 import { Stripe } from '@ionic-native/stripe';
 import { CardIO } from '@ionic-native/card-io';
+import { EmailComposer } from '@ionic-native/email-composer';
+
 
 
 @NgModule({
@@ -44,6 +47,7 @@ import { CardIO } from '@ionic-native/card-io';
     CheckOutPage,
     CollectionsPage,
     ShippingPage,
+    ShowContentPage,
     ContactPage,
     SignupPage
   ],
@@ -70,9 +74,10 @@ import { CardIO } from '@ionic-native/card-io';
     CheckOutPage,
     CollectionsPage,
     ShippingPage,
+    ShowContentPage,
     ContactPage,
     SignupPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Stripe, CardIO]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Stripe, CardIO, EmailComposer]
 })
 export class AppModule {}
