@@ -47,7 +47,7 @@ export class MyApp {
       { title: 'Shows', component: ShowsPage, icon: 'calendar'},
       { title: 'Shipping', component: ShippingPage, icon: 'person'},
       { title: 'Return Policy', component: ReturnPolicyPage, icon:'filing'},
-      { title: 'Female Campaign', component: FemaleCampaignPage, icon: 'person'},
+      // { title: 'Female Campaign', component: FemaleCampaignPage, icon: 'person'},
       { title: 'FAQ', component: FaqPage, icon:'help-circle'},
 
       { title: 'Contact Us', component: ContactPage, icon:'mail'}

@@ -18,7 +18,7 @@
   	  <ion-slide class="slide" *ngFor="let c of collections" (tap)="openCollectionModal(c)">
         <div>
           <img class="collection-image" [src]="c.image"/>
-
+          <div class="collection-name-blur"></div>
         </div>
         <h1 class="collection-name">
           {{c.name}}
@@ -33,7 +33,7 @@
       <ion-row wrap>
     		<ion-col width-50 *ngFor="let p of allAvailable">
     			<ion-card (tap)="openProductModal(p)">
-            <img class="card-image" src="../../assets/Images/products/{{p.photoPath}}" />
+            <img class="card-image" src="assets/Images/products/{{p.photoPath}}" />
             <ion-card-content>
               <ion-card-title class="card-title">
                 {{p.name}}

@@ -7,6 +7,9 @@ page-product {
 
 	.collection-image{
 		width: 100%;
+		max-width: 100%;
+    max-height: 300px;
+		object-fit: cover;
 	}
 
 	.collection-name{
@@ -14,14 +17,26 @@ page-product {
   	position: absolute;
   	color: white;
   	font-size: 22px;
-
   	font-weight: bold;
-
   	top: 40%;
   	left: 25%;
 		right: 25%;
 		bottom: 40%;
   	margin: auto;
+	}
+	.collection-name-blur{
+			z-index: 99;
+  		position: absolute;
+  		top: 40%;
+  		left: 25%;
+			right: 25%;
+			bottom: 40%;
+  		margin: auto;
+			border-radius: 60%;
+			width: 50%;
+			height: 25%;
+			background: black;
+			filter: blur(15px);
 
 	}
 
