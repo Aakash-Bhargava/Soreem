@@ -45,10 +45,10 @@ export class MyApp {
       { title: 'About', component: AboutPage, icon: 'information-circle'},
       { title: 'Shipping', component: ShippingPage, icon: 'person'},
       { title: 'Return Policy', component: ReturnPolicyPage, icon:'filing'},
-      { title: 'Female Campaign', component: FemaleCampaignPage, icon: 'person'},
+      // { title: 'Female Campaign', component: FemaleCampaignPage, icon: 'person'},
       { title: 'FAQ', component: FaqPage, icon:'help-circle'},
 
-      { title: 'Contact Us', component: ContactPage, icon:'mail'}
+      // { title: 'Contact Us', component: ContactPage, icon:'mail'}
     ];
 
     });

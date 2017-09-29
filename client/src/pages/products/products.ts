@@ -24,6 +24,7 @@ export class ProductsPage {
   allProducts = <any>[];
   allAvailable = <any>[];
   collections = <any>[];
+  collectionsLoaded = <any>[];
   items = <any>[];
 
   constructor(public navCtrl: NavController,
@@ -41,8 +42,16 @@ export class ProductsPage {
     loadCollections() {
       this.queryCollections().then(({data}) => {
         if (data){
-          this.collections = data
-          this.collections = this.collections.allCollections;
+          this.collectionsLoaded = data;
+          this.collectionsLoaded = this.collectionsLoaded.allCollections;
+          for(let collection of this.collectionsLoaded){
+            console.log(collection);
+            if(collection.available){
+              console.log(collection);
+              this.collections.push(collection);
+            }
+          }
+          // this.collections = this.collections.allCollections;
           console.log(this.collections);
         }
       });
@@ -56,6 +65,7 @@ export class ProductsPage {
             allCollections{
               name
               image
+              available
               products {
                 id
                 name
