@@ -7,6 +7,7 @@ import { WishListPage } from '../pages/wishlist/wishlist';
 import { ProfilePage } from '../pages/profile/profile';
 import { FaqPage } from '../pages/faq/faq';
 import { AboutPage } from '../pages/about/about';
+import { ShowsPage } from '../pages/shows/shows';
 import { ContactPage } from '../pages/contact/contact';
 import { ShippingPage } from '../pages/shipping/shipping';
 import { ReturnPolicyPage } from '../pages/returnPolicy/returnPolicy';
@@ -43,6 +44,7 @@ export class MyApp {
       this.pages = [
       { title: 'Home', component: TabsPage , icon: 'home'},
       { title: 'About', component: AboutPage, icon: 'information-circle'},
+      { title: 'Shows', component: ShowsPage, icon: 'calendar'},
       { title: 'Shipping', component: ShippingPage, icon: 'person'},
       { title: 'Return Policy', component: ReturnPolicyPage, icon:'filing'},
       // { title: 'Female Campaign', component: FemaleCampaignPage, icon: 'person'},

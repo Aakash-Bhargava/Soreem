@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 /*
   Generated class for the Contact page.
@@ -13,10 +14,16 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ContactPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private emailComposer: EmailComposer) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactPage');
   }
+
+
 
 }

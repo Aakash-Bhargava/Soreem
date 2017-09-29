@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController} from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
-
+import { ShowContentPage } from '../show-content/show-content';
 import { Angular2Apollo } from 'angular2-apollo';
 import { Subscription } from 'rxjs/Subscription';
 import gql from 'graphql-tag';
@@ -17,7 +17,8 @@ export class ShowsPage {
   allShows = <any>[];
 
   constructor(public navCtrl: NavController,
-              private apollo: Angular2Apollo) {
+              private apollo: Angular2Apollo,
+              public modalCtrl: ModalController) {
 
   }
 
@@ -47,6 +48,11 @@ export class ShowsPage {
       }
       `
     }).toPromise();
+  }
+
+  viewShow(show){
+    let modal = this.modalCtrl.create(ShowContentPage, {show: show});
+    modal.present();
   }
 
 }

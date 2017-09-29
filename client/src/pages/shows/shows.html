@@ -10,8 +10,13 @@
 </ion-header>
 
 <ion-content padding>
+<<<<<<< HEAD
   <ion-card *ngFor="let show of allShows">
     <img src="assets/shows/{{show.altName}}/{{show.altName}}.jpg"/>
+=======
+  <ion-card *ngFor="let show of allShows" (tap)="viewShow(show)">
+  <img src="../../assets/Images/shows/{{show.altName}}/{{show.altName}}.jpg"/>
+>>>>>>> 2e101eca158fecaf14c372eeec2d7c16018cf354
     <ion-card-header>
       {{show.name}}
     </ion-card-header>
