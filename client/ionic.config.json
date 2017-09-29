@@ -1,13 +1,9 @@
 {
   "name": "Soreem",
-<<<<<<< HEAD
   "app_id": "457748a9",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
   }
-=======
-  "app_id": "4708adc8",
-  "type": "ionic-angular"
->>>>>>> 2e101eca158fecaf14c372eeec2d7c16018cf354
+
 }
